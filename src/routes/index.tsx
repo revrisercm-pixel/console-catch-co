@@ -60,17 +60,15 @@ function LotPhotos() {
   return (
     <section id="lots" className="border-b border-border">
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <div className="flex items-end justify-between gap-8">
-          <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.2em] text-primary">Recent lots</p>
-            <h2 className="mt-3 font-display text-4xl sm:text-5xl">
-              Real pallets we've purchased.
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              A snapshot of recent buys — from single-store buyouts to full
-              liquidation pallets.
-            </p>
-          </div>
+        <div className="max-w-2xl">
+          <p className="text-xs uppercase tracking-[0.2em] text-primary">Recent lots</p>
+          <h2 className="mt-3 font-display text-4xl sm:text-5xl">
+            Real pallets we've purchased.
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            A snapshot of recent buys — from single-store buyouts to full
+            liquidation pallets.
+          </p>
         </div>
         <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
           {photos.map((p, i) => (
@@ -100,9 +98,9 @@ function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a href="/" className="flex items-center gap-2 font-display text-xl">
-          <span className="inline-block h-2 w-2 rounded-full bg-foreground" />
-          sellbrokenconsoles
+        <a href="/" className="flex items-baseline gap-2 font-display text-xl">
+          <span className="inline-block h-2 w-2 translate-y-[-2px] rounded-full bg-primary" />
+          <span>sellbrokenconsoles<span className="font-semibold italic text-primary">.com</span></span>
         </a>
         <nav className="hidden gap-8 text-sm text-muted-foreground sm:flex">
           <a href="#how" className="hover:text-foreground">How it works</a>
@@ -372,9 +370,9 @@ function Footer() {
   return (
     <footer className="bg-background">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-2 font-display text-lg">
-          <span className="inline-block h-2 w-2 rounded-full bg-foreground" />
-          sellbrokenconsoles.com
+        <div className="flex items-baseline gap-2 font-display text-lg">
+          <span className="inline-block h-2 w-2 translate-y-[-2px] rounded-full bg-primary" />
+          <span>sellbrokenconsoles<span className="font-semibold italic text-primary">.com</span></span>
         </div>
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} Sell Broken Consoles. Buying nationwide.
