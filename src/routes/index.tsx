@@ -60,17 +60,15 @@ function LotPhotos() {
   return (
     <section id="lots" className="border-b border-border">
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <div className="flex items-end justify-between gap-8">
-          <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.2em] text-primary">Recent lots</p>
-            <h2 className="mt-3 font-display text-4xl sm:text-5xl">
-              Real pallets we've purchased.
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              A snapshot of recent buys — from single-store buyouts to full
-              liquidation pallets.
-            </p>
-          </div>
+        <div className="max-w-2xl">
+          <p className="text-xs uppercase tracking-[0.2em] text-primary">Recent lots</p>
+          <h2 className="mt-3 font-display text-4xl sm:text-5xl">
+            Real pallets we've purchased.
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            A snapshot of recent buys — from single-store buyouts to full
+            liquidation pallets.
+          </p>
         </div>
         <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
           {photos.map((p, i) => (
