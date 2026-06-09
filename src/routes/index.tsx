@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LeadForm } from "@/components/LeadForm";
 import { Toaster } from "@/components/ui/sonner";
+import lot1 from "@/assets/IMG_2354.png.asset.json";
+import lot2 from "@/assets/IMG_2355.webp.asset.json";
+import lot3 from "@/assets/IMG_2356.jpeg.asset.json";
+import lot4 from "@/assets/IMG_2357.jpeg.asset.json";
+import lot5 from "@/assets/IMG_2358.jpeg.asset.json";
+import lot6 from "@/assets/IMG_2359.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,10 +40,59 @@ function Index() {
       <Buyers />
       <How />
       <Accepted />
+      <LotPhotos />
       <Quote />
       <FAQ />
       <Footer />
     </div>
+  );
+}
+
+function LotPhotos() {
+  const photos = [
+    { src: lot1.url, caption: "Pallet · 200+ mixed PS4 units" },
+    { src: lot5.url, caption: "Sorted bulk · returns lot" },
+    { src: lot2.url, caption: "Untested PS4 Pro stack" },
+    { src: lot6.url, caption: "Mixed condition · boxed + loose" },
+    { src: lot4.url, caption: "Customer return lot" },
+    { src: lot3.url, caption: "Independent store buyout" },
+  ];
+  return (
+    <section id="lots" className="border-b border-border">
+      <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="flex items-end justify-between gap-8">
+          <div className="max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.2em] text-primary">Recent lots</p>
+            <h2 className="mt-3 font-display text-4xl sm:text-5xl">
+              Real pallets we've purchased.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              A snapshot of recent buys — from single-store buyouts to full
+              liquidation pallets.
+            </p>
+          </div>
+        </div>
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
+          {photos.map((p, i) => (
+            <figure
+              key={i}
+              className="group relative overflow-hidden rounded-lg border border-border bg-surface"
+            >
+              <img
+                src={p.src}
+                alt={p.caption}
+                loading="lazy"
+                className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-10 text-xs text-white">
+                <span className="font-mono opacity-80">LOT · {String(i + 1).padStart(2, "0")}</span>
+                <span>{p.caption}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -52,6 +107,7 @@ function Nav() {
         <nav className="hidden gap-8 text-sm text-muted-foreground sm:flex">
           <a href="#how" className="hover:text-foreground">How it works</a>
           <a href="#accepted" className="hover:text-foreground">What we buy</a>
+          <a href="#lots" className="hover:text-foreground">Recent lots</a>
           <a href="#faq" className="hover:text-foreground">FAQ</a>
         </nav>
         <a
