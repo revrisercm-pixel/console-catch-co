@@ -107,6 +107,7 @@ function Nav() {
         <nav className="hidden gap-8 text-sm text-muted-foreground sm:flex">
           <a href="#how" className="hover:text-foreground">How it works</a>
           <a href="#accepted" className="hover:text-foreground">What we buy</a>
+          <a href="#lots" className="hover:text-foreground">Recent lots</a>
           <a href="#faq" className="hover:text-foreground">FAQ</a>
         </nav>
         <a
