@@ -370,9 +370,9 @@ function Footer() {
   return (
     <footer className="bg-background">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-2 font-display text-lg">
-          <span className="inline-block h-2 w-2 rounded-full bg-foreground" />
-          sellbrokenconsoles.com
+        <div className="flex items-baseline gap-2 font-display text-lg">
+          <span className="inline-block h-2 w-2 translate-y-[-2px] rounded-full bg-primary" />
+          <span>sellbrokenconsoles<span className="font-semibold italic text-primary">.com</span></span>
         </div>
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} Sell Broken Consoles. Buying nationwide.
