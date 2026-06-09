@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LeadForm } from "@/components/LeadForm";
 import { Toaster } from "@/components/ui/sonner";
+import lot1 from "@/assets/IMG_2354.png.asset.json";
+import lot2 from "@/assets/IMG_2355.webp.asset.json";
+import lot3 from "@/assets/IMG_2356.jpeg.asset.json";
+import lot4 from "@/assets/IMG_2357.jpeg.asset.json";
+import lot5 from "@/assets/IMG_2358.jpeg.asset.json";
+import lot6 from "@/assets/IMG_2359.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
