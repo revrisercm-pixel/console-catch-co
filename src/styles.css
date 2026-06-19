@@ -38,27 +38,27 @@
 
 :root {
   --radius: 0.5rem;
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --surface: #f5f5f5;
-  --card: #ffffff;
-  --card-foreground: #0a0a0a;
-  --popover: #ffffff;
-  --popover-foreground: #0a0a0a;
-  --primary: #0a0a0a;
+  --background: #1a1a1a;
+  --foreground: #f5f0e0;
+  --surface: #262626;
+  --card: #262626;
+  --card-foreground: #f5f0e0;
+  --popover: #262626;
+  --popover-foreground: #f5f0e0;
+  --primary: #e85d3a;
   --primary-foreground: #ffffff;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #0a0a0a;
-  --muted: #f5f5f5;
-  --muted-foreground: #737373;
-  --accent: #f5f5f5;
-  --accent-foreground: #0a0a0a;
-  --accent-lime: #a3a3a3;
+  --secondary: #2d2d2d;
+  --secondary-foreground: #f5f0e0;
+  --muted: #2d2d2d;
+  --muted-foreground: #a3a3a3;
+  --accent: #2d2d2d;
+  --accent-foreground: #f5f0e0;
+  --accent-lime: #e85d3a;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #e5e5e5;
-  --input: #e5e5e5;
-  --ring: #0a0a0a;
+  --border: #404040;
+  --input: #404040;
+  --ring: #e85d3a;
 }
 
 .dark {
