@@ -51,6 +51,32 @@ function Index() {
   );
 }
 
+function FlatlayBanner() {
+  return (
+    <section className="border-b border-border">
+      <div className="relative h-64 w-full overflow-hidden sm:h-80 lg:h-96">
+        <img
+          src={flatlay.url}
+          alt="Disassembled console parts laid out in a grid"
+          width={1600}
+          height={900}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-primary">Every unit, every part</p>
+            <p className="mt-3 max-w-md font-display text-3xl sm:text-4xl">
+              Boards, shells, controllers — <em className="text-muted-foreground">we want it all.</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function LotPhotos() {
   const photos = [
     { src: lot1.url, caption: "Pallet · 200+ mixed PS4 units" },
