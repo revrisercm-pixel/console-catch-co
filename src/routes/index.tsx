@@ -177,7 +177,7 @@ function Hero() {
 function ConsoleArt() {
   return (
     <div className="relative aspect-square w-full max-w-md">
-      <div className="absolute inset-6 rounded-3xl border border-border bg-card shadow-[0_30px_80px_-40px_rgba(0,0,0,0.4)]" />
+      <div className="absolute inset-6 rounded-3xl border border-border bg-card shadow-[0_30px_80px_-40px_rgba(0,0,0,0.6)]" />
       <div className="absolute inset-12 grid grid-cols-3 grid-rows-3 gap-3 p-4">
         {Array.from({ length: 9 }).map((_, i) => (
           <div
