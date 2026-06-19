@@ -7,6 +7,8 @@ import lot3 from "@/assets/IMG_2356.jpeg.asset.json";
 import lot4 from "@/assets/IMG_2357.jpeg.asset.json";
 import lot5 from "@/assets/IMG_2358.jpeg.asset.json";
 import lot6 from "@/assets/IMG_2359.jpeg.asset.json";
+import heroPallet from "@/assets/hero-pallet.jpg.asset.json";
+import flatlay from "@/assets/graphic-flatlay.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
