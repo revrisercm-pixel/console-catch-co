@@ -7,6 +7,8 @@ import lot3 from "@/assets/IMG_2356.jpeg.asset.json";
 import lot4 from "@/assets/IMG_2357.jpeg.asset.json";
 import lot5 from "@/assets/IMG_2358.jpeg.asset.json";
 import lot6 from "@/assets/IMG_2359.jpeg.asset.json";
+import heroPallet from "@/assets/hero-pallet.jpg.asset.json";
+import flatlay from "@/assets/graphic-flatlay.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,12 +41,39 @@ function Index() {
       <Hero />
       <Buyers />
       <How />
+      <FlatlayBanner />
       <Accepted />
       <LotPhotos />
       <Quote />
       <FAQ />
       <Footer />
     </div>
+  );
+}
+
+function FlatlayBanner() {
+  return (
+    <section className="border-b border-border">
+      <div className="relative h-64 w-full overflow-hidden sm:h-80 lg:h-96">
+        <img
+          src={flatlay.url}
+          alt="Disassembled console parts laid out in a grid"
+          width={1600}
+          height={900}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-primary">Every unit, every part</p>
+            <p className="mt-3 max-w-md font-display text-3xl sm:text-4xl">
+              Boards, shells, controllers — <em className="text-muted-foreground">we want it all.</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -167,29 +196,29 @@ function Hero() {
 
         <div className="relative flex items-center justify-center">
           <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-surface to-transparent" />
-          <ConsoleArt />
+          <HeroImage />
         </div>
       </div>
     </section>
   );
 }
 
-function ConsoleArt() {
+function HeroImage() {
   return (
     <div className="relative aspect-square w-full max-w-md">
-      <div className="absolute inset-6 rounded-3xl border border-border bg-card shadow-[0_30px_80px_-40px_rgba(0,0,0,0.6)]" />
-      <div className="absolute inset-12 grid grid-cols-3 grid-rows-3 gap-3 p-4">
-        {Array.from({ length: 9 }).map((_, i) => (
-          <div
-            key={i}
-            className="rounded-md border border-border bg-surface"
-            style={{ opacity: 0.4 + (i % 4) * 0.15 }}
-          />
-        ))}
-      </div>
-      <div className="absolute bottom-10 left-10 right-10 flex items-center justify-between rounded-xl border border-border bg-background px-4 py-3 text-xs">
-        <span className="font-mono text-muted-foreground">LOT #4821</span>
-        <span className="font-mono">412 units · mixed</span>
+      <div className="absolute -inset-4 -z-10 rounded-3xl bg-primary/10 blur-2xl" />
+      <div className="relative h-full w-full overflow-hidden rounded-2xl border border-border shadow-[0_40px_100px_-30px_rgba(0,0,0,0.8)]">
+        <img
+          src={heroPallet.url}
+          alt="Pallet of broken video game consoles in a warehouse"
+          width={1024}
+          height={1024}
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/85 to-transparent px-5 pb-4 pt-12 text-xs text-white">
+          <span className="font-mono opacity-80">LOT #4821</span>
+          <span className="font-mono">412 units · mixed</span>
+        </div>
       </div>
     </div>
   );
