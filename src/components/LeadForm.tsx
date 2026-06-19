@@ -28,7 +28,7 @@ export function LeadForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="grid gap-4 rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-[0_1px_0_rgba(0,0,0,0.04),0_20px_60px_-30px_rgba(0,0,0,0.25)]"
+      className="grid gap-4 rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.5)]"
     >
       <div className="grid gap-2 sm:grid-cols-2">
         <Field name="company" label="Company" required placeholder="Acme Games" />
