@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LeadForm } from "@/components/LeadForm";
 import { Toaster } from "@/components/ui/sonner";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import lot1 from "@/assets/IMG_2354.png.asset.json";
 import lot2 from "@/assets/IMG_2355.webp.asset.json";
 import lot3 from "@/assets/IMG_2356.jpeg.asset.json";
