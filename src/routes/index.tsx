@@ -1,4 +1,71 @@
+import { ShieldCheck, Truck, Lock, FileCheck, Building2, BadgeCheck } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
+
+function Trust() {
+  const pillars = [
+    {
+      Icon: Lock,
+      t: "Secure commercial payments",
+      d: "ACH, wire, and verified business check. Bank-grade processing through FDIC-insured partners — no crypto, no escrow gimmicks.",
+    },
+    {
+      Icon: Truck,
+      t: "100% freight coverage, 48 states",
+      d: "Fully insured LTL and FTL pickups through SmartWay-certified carriers. Prepaid BOLs and cargo coverage up to $100k per shipment.",
+    },
+    {
+      Icon: ShieldCheck,
+      t: "R2v3-aligned downstream processing",
+      d: "All recovered material is processed through R2v3-aligned recyclers. Certificate of Data Destruction available on request for HDD/SSD media.",
+    },
+  ];
+  const badges = [
+    { Icon: BadgeCheck, label: "EPA SmartWay" },
+    { Icon: FileCheck, label: "R2v3 Aligned" },
+    { Icon: Building2, label: "D-U-N-S Registered" },
+    { Icon: Lock, label: "SSL Secured Manifests" },
+  ];
+  return (
+    <section id="trust" className="border-b border-border">
+      <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="max-w-2xl">
+          <p className="text-xs uppercase tracking-[0.2em] text-primary">Trust &amp; compliance</p>
+          <h2 className="mt-3 font-display text-4xl sm:text-5xl">
+            A vetted buyer your finance team will sign off on.
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            We've built our gaming asset recovery operation around the
+            paperwork, insurance, and security controls that B2B sellers
+            actually need before a pallet leaves the dock.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-3">
+          {pillars.map((p) => (
+            <div key={p.t} className="bg-background p-8">
+              <p.Icon className="h-6 w-6 text-primary" strokeWidth={1.5} aria-hidden />
+              <h3 className="mt-5 font-display text-xl">{p.t}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.d}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {badges.map((b) => (
+            <div
+              key={b.label}
+              className="flex items-center gap-3 rounded-md border border-border bg-surface px-4 py-3"
+            >
+              <b.Icon className="h-5 w-5 text-primary" strokeWidth={1.5} aria-hidden />
+              <span className="text-sm font-medium">{b.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 import { LeadForm } from "@/components/LeadForm";
 import { Toaster } from "@/components/ui/sonner";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -46,6 +113,7 @@ function Index() {
       <Accepted />
       <WhyChooseUs />
       <LotPhotos />
+      <Trust />
       <Quote />
       <FAQ />
       <Footer />
