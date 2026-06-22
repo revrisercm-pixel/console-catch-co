@@ -1,3 +1,4 @@
+import { ShieldCheck, Truck, Lock, FileCheck, Building2, BadgeCheck } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 import { LeadForm } from "@/components/LeadForm";
 import { Toaster } from "@/components/ui/sonner";
