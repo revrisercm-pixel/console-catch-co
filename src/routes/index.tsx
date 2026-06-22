@@ -46,6 +46,7 @@ function Index() {
       <Accepted />
       <WhyChooseUs />
       <LotPhotos />
+      <Trust />
       <Quote />
       <FAQ />
       <Footer />
