@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LeadForm } from "@/components/LeadForm";
 import { Toaster } from "@/components/ui/sonner";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import lot1 from "@/assets/IMG_2354.png.asset.json";
 import lot2 from "@/assets/IMG_2355.webp.asset.json";
 import lot3 from "@/assets/IMG_2356.jpeg.asset.json";
@@ -406,39 +407,54 @@ function Detail({ k, v }: { k: string; v: string }) {
 function FAQ() {
   const qa = [
     {
-      q: "Do you really buy non-working consoles?",
-      a: "Yes — that's our specialty. We refurbish, harvest parts, and recycle responsibly. Untested and no-power lots are welcome.",
+      q: "What types of broken video game consoles do you buy in bulk?",
+      a: "We buy all major console generations in bulk, including modern systems like Sony PlayStation 5, Xbox Series X/S, and Nintendo Switch. We also accept older retro systems from Nintendo, Sega, and early PlayStation or Xbox models. We purchase broken, untested, salvage, and parts-only inventory.",
     },
     {
-      q: "What's the minimum quantity?",
-      a: "50 units. Most of our partners send pallets of 200–1,500. Truckloads are no problem.",
+      q: "How does the nationwide freight pickup process work?",
+      a: "It is completely hassle-free. Once you submit your inventory manifest form, our asset recovery team will send you a guaranteed bulk buyout offer. If you accept, we arrange, schedule, and pay for 100% of the freight pickup directly from your loading dock or storefront anywhere in the USA.",
     },
     {
-      q: "Who pays for shipping?",
-      a: "We do — 100% of it. On approved lots we send a prepaid BOL or schedule a carrier pickup at your storefront or loading dock anywhere across our 48 states freight pickup network.",
+      q: "Do you require a minimum unit count or pallet size to buy?",
+      a: "Yes, because we cover the full cost of nationwide freight shipping, we specialize in bulk quantities. We typically look for large lots, multiple pallets, or warehouse surplus. Please submit your manifest details through our online form to see if your inventory qualifies for free freight pickup.",
     },
     {
-      q: "How fast do you pay?",
-      a: "Wire or ACH on receipt and count — usually within 2 business days. Net 7 available for recurring partners.",
-    },
-    {
-      q: "Do you sign NDAs and serial-number agreements?",
-      a: "Yes. We work with returns processors and big-box surplus regularly and follow chain-of-custody requirements.",
+      q: "How and when do I get paid for my bulk console inventory?",
+      a: "We believe in fast, secure payouts. Once our logistics team coordinates the freight pickup and verifies the manifest contents at our processing facility, we issue your payment immediately via your preferred secure commercial payment method.",
     },
   ];
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: qa.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
   return (
     <section id="faq" className="border-b border-border bg-surface">
       <div className="mx-auto max-w-3xl px-6 py-24">
         <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">FAQ</p>
-        <p className="mt-3 font-display text-4xl sm:text-5xl">Common questions.</p>
-        <dl className="mt-12 divide-y divide-border border-t border-border">
-          {qa.map((item) => (
-            <div key={item.q} className="grid gap-2 py-6 sm:grid-cols-[1fr_2fr] sm:gap-8">
-              <dt className="font-display text-xl">{item.q}</dt>
-              <dd className="text-muted-foreground leading-relaxed">{item.a}</dd>
-            </div>
+        <h2 className="mt-3 font-display text-4xl sm:text-5xl leading-tight">
+          Frequently Asked Questions About Bulk Buying &amp; Freight
+        </h2>
+        <Accordion type="single" collapsible className="mt-10 border-t border-border">
+          {qa.map((item, i) => (
+            <AccordionItem key={item.q} value={`item-${i}`} className="border-b border-border">
+              <AccordionTrigger className="py-5 text-left hover:no-underline">
+                <h3 className="font-display text-lg sm:text-xl m-0">{item.q}</h3>
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed text-base">
+                {item.a}
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </dl>
+        </Accordion>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </div>
     </section>
   );
