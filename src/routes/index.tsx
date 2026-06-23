@@ -513,8 +513,8 @@ function FAQ() {
               <AccordionTrigger className="py-5 text-left hover:no-underline">
                 <h3 className="font-display text-lg sm:text-xl m-0">{item.q}</h3>
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed text-base">
-                {item.a}
+              <AccordionContent className="pb-5">
+                <p className="text-base leading-relaxed text-muted-foreground">{item.a}</p>
               </AccordionContent>
             </AccordionItem>
           ))}
