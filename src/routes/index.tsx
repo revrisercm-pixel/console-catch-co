@@ -484,11 +484,11 @@ function FAQ() {
     },
     {
       q: "Do you require a minimum unit count or pallet size to buy?",
-      a: "Yes, because we cover the full cost of nationwide freight shipping, we specialize in bulk quantities. We typically look for large lots, multiple pallets, or warehouse surplus. Please submit your manifest details through our online form to see if your inventory qualifies for free freight pickup.",
+      a: "Yes, because we cover the full cost of nationwide freight shipping, we specialize in bulk quantities. Our minimum lot size is 50 units. We typically look for large lots, multiple pallets, or warehouse surplus. Please submit your manifest details through our online form to see if your inventory qualifies for free freight pickup.",
     },
     {
       q: "How and when do I get paid for my bulk console inventory?",
-      a: "We believe in fast, secure payouts. Once our logistics team coordinates the freight pickup and verifies the manifest contents at our processing facility, we issue your payment immediately via your preferred secure commercial payment method.",
+      a: "We believe in fast, secure payouts. Once our logistics team coordinates the freight pickup and verifies the manifest contents at our processing facility, we issue your payment immediately via your preferred secure commercial payment method like Wire or ACH.",
     },
   ];
   const jsonLd = {
