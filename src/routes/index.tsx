@@ -79,25 +79,33 @@ import heroPallet from "@/assets/hero-pallet.jpg.asset.json";
 import flatlay from "@/assets/graphic-flatlay.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Bulk Broken Console Buyer | Nationwide Gaming Asset Recovery" },
-      {
-        name: "description",
-        content:
-          "We buy broken, untested, and salvage video game consoles in bulk. Offering hassle-free nationwide freight pickup for independent stores, repair shops, and liquidation centers.",
-      },
-      { property: "og:title", content: "Bulk Broken Console Buyer | Nationwide Gaming Asset Recovery" },
-      {
-        property: "og:description",
-        content:
-          "We buy broken, untested, and salvage video game consoles in bulk. Offering hassle-free nationwide freight pickup for independent stores, repair shops, and liquidation centers.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
+  head: () => {
+    const url = "https://console-catch-co.lovable.app/";
+    const title = "Bulk Broken Console Buyer | Nationwide Gaming Asset Recovery";
+    const description =
+      "We buy broken, untested, and salvage video game consoles in bulk. Hassle-free nationwide freight pickup for independent stores, repair shops, and liquidation centers.";
+    const image = "https://console-catch-co.lovable.app/og-image.jpg";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: url },
+        { property: "og:site_name", content: "sellbrokenconsoles.com" },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
+        { name: "robots", content: "index, follow" },
+      ],
+      links: [{ rel: "canonical", href: url }],
+    };
+  },
   component: Index,
 });
 
