@@ -103,4 +103,11 @@
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
+
+  .font-stencil {
+    font-family: "Oswald", "Inter", system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+  }
 }
