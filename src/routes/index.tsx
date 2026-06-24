@@ -227,81 +227,87 @@ function Nav() {
 }
 
 function Hero() {
+  const features = [
+    { Icon: Building2, t: "Buying", s: "In bulk" },
+    { Icon: Truck, t: "Nationwide", s: "Pickup" },
+    { Icon: BadgeCheck, t: "Fast quotes", s: "Fair prices" },
+  ];
   return (
-    <section className="relative overflow-hidden border-b border-border">
-      <div className="mx-auto grid max-w-6xl gap-16 px-6 py-20 sm:py-28 lg:grid-cols-[1.1fr_1fr] lg:gap-12">
-        <div className="flex flex-col justify-center">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-foreground" />
-            48 states freight pickup · pallets &amp; truckloads
+    <section className="relative overflow-hidden border-b border-border bg-background">
+      <div className="absolute inset-0">
+        <img
+          src={heroPallet.url}
+          alt="Warehouse pallet of bulk broken video games and salvage console pallets ready for nationwide freight pickup"
+          className="h-full w-full object-cover object-right opacity-40 lg:opacity-100"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/10 lg:via-background/85 lg:to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      </div>
+
+      <div className="relative mx-auto grid max-w-7xl px-6 py-20 sm:py-28 lg:min-h-[680px] lg:grid-cols-[1.1fr_1fr] lg:py-32">
+        <div className="flex max-w-2xl flex-col justify-center">
+          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-primary">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            48 states · freight covered
           </span>
-          <h1 className="mt-6 font-display text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
-            Nationwide Bulk Broken Video Game Console Buyer
+
+          <h1 className="mt-7 font-stencil text-[3.25rem] leading-[0.92] sm:text-7xl lg:text-[5.5rem] xl:text-[6.25rem]">
+            <span className="block">Nationwide</span>
+            <span className="block text-primary">Bulk Broken</span>
+            <span className="block">Console Buyer</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Turn dead inventory into revenue. We purchase broken, untested,
-            customer-return and end-of-life consoles by the pallet — and we
-            pay for and manage 100% of the freight logistics directly from
-            your storefront or loading dock. Full-service gaming asset
-            recovery, anywhere in the lower 48.
+
+          <div className="mt-6 h-[3px] w-20 bg-primary" />
+
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            We purchase broken, untested, customer-return and end-of-life
+            consoles by the pallet — and we pay for and manage 100% of the
+            freight logistics directly from your loading dock.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="#quote"
-              className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground hover:opacity-90"
+              className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 text-sm font-semibold uppercase tracking-wider text-primary-foreground shadow-lg shadow-primary/20 transition hover:opacity-90"
             >
               Get my offer →
             </a>
             <a
               href="#how"
-              className="inline-flex h-12 items-center justify-center rounded-md border border-border px-6 text-sm font-medium hover:bg-surface"
+              className="inline-flex h-12 items-center justify-center rounded-md border border-border bg-background/60 px-6 text-sm font-medium backdrop-blur hover:bg-surface"
             >
               How it works
             </a>
           </div>
-          <dl className="mt-12 grid max-w-md grid-cols-3 gap-6">
-            {[
-              ["24h", "Offer turnaround"],
-              ["100%", "Freight covered"],
-              ["Net 7", "Payment terms"],
-            ].map(([k, v]) => (
-              <div key={v} className="border-l border-border pl-4">
-                <dt className="font-display text-3xl">{k}</dt>
-                <dd className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{v}</dd>
+
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+            {features.map(({ Icon, t, s }) => (
+              <div key={t} className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/40 bg-primary/10">
+                  <Icon className="h-5 w-5 text-primary" strokeWidth={1.75} aria-hidden />
+                </span>
+                <div className="text-xs font-semibold uppercase leading-tight tracking-wider">
+                  <div>{t}</div>
+                  <div className="text-primary">{s}</div>
+                </div>
               </div>
             ))}
-          </dl>
+          </div>
+
+          <div className="mt-8 inline-flex w-fit items-center gap-3 rounded-md border border-border bg-surface/80 px-4 py-3 backdrop-blur">
+            <ShieldCheck className="h-5 w-5 text-primary" strokeWidth={1.75} aria-hidden />
+            <p className="text-xs font-semibold uppercase tracking-[0.16em]">
+              Trusted by resellers. <span className="text-primary">Focused on value.</span>
+            </p>
+          </div>
         </div>
 
-        <div className="relative flex items-center justify-center">
-          <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-surface to-transparent" />
-          <HeroImage />
-        </div>
+        <div className="hidden lg:block" />
       </div>
     </section>
   );
 }
 
-function HeroImage() {
-  return (
-    <div className="relative aspect-square w-full max-w-md">
-      <div className="absolute -inset-4 -z-10 rounded-3xl bg-primary/10 blur-2xl" />
-      <div className="relative h-full w-full overflow-hidden rounded-2xl border border-border shadow-[0_40px_100px_-30px_rgba(0,0,0,0.8)]">
-        <img
-          src={heroPallet.url}
-          alt="Warehouse pallet of bulk broken video games and salvage console pallets ready for nationwide freight pickup"
-          width={1024}
-          height={1024}
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/85 to-transparent px-5 pb-4 pt-12 text-xs text-white">
-          <span className="font-mono opacity-80">LOT #4821</span>
-          <span className="font-mono">412 units · mixed</span>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function Buyers() {
   const audiences = [
